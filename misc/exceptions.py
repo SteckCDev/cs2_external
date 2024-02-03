@@ -1,0 +1,6 @@
+class DaemonsIsRunningError(ValueError):
+    ...
+
+
+class DaemonsDeadError(ValueError):
+    ...

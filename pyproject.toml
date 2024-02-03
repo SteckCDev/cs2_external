@@ -1,0 +1,66 @@
+[tool.poetry]
+name = "cs2-external-trigger"
+version = "0.1.0"
+description = ""
+authors = ["SteckCDev <steck.cpp@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+keyboard = "^0.13.5"
+Pymem = "1.13.0"
+pynput = "^1.7.6"
+six = "^1.16.0"
+pywin32 = "^306"
+
+[tool.poetry.group.dev.dependencies]
+mypy = "^1.8.0"
+isort = "5.13.2"
+flake8 = "7.0.0"
+Flake8-pyproject = "1.2.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+asyncio_mode = "auto"
+
+[mypy]
+exclude = [
+    '^\.venv/*',
+    '^\.idea/*',
+    '^\.vscode/*',
+    '^**/__pycache__/*',
+    '^\.pytest_cache/*',
+    '^\.mypy_cache/*'
+]
+
+[tool.isort]
+line_length = 120
+lines_after_imports = 2
+multi_line_output = 3
+skip_glob = [
+    ".venv",
+    ".idea",
+    ".nodes",
+    ".tor",
+    ".vscode"
+]
+
+[tool.flake8]
+max-line-length = 120
+ignore = [
+    "F401"
+]
+exclude = [
+    "__pycache__/*",
+    ".venv",
+    ".idea/*",
+    ".nodes/*",
+    ".tor/*",
+    ".vscode/*",
+    "migrations/*"
+]
+
